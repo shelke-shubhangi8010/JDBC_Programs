@@ -3,8 +3,9 @@ package test;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.Types;
 
-public class CallableStateDemo {
+public class Callable_ex_Factorial {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -19,13 +20,15 @@ public class CallableStateDemo {
 			    Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/javaDB","root","root");
 
 		 // step : 3 Create SQL statement
-			  CallableStatement cs=con.prepareCall("{call delete_By_id(?)}");
-			   cs.setInt(1, 104);
+			  CallableStatement cs=con.prepareCall("{call factorial_number1(?,?)}");
+			   cs.setInt(1, 25);
+			   cs.registerOutParameter(2, Types.INTEGER);
+			   
 
 		// step: 4  Execute  SQL Statement
 			 cs.execute();
 
-			    System.out.println("deletion successfully");
+			    System.out.println("factorial of number : "+cs.getInt(2));
 
 		 // step : 5  close connection
 			  con.close();
@@ -36,9 +39,10 @@ public class CallableStateDemo {
 		}
 
 
-
+		
+		
+		
+		
 	}
 
 }
-// Plsql block execute
-//store function area of circle input as a radius
