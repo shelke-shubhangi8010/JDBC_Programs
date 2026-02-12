@@ -1,5 +1,5 @@
 package test;
-import javax.sql.CachedRowSet;
+import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 import javax.sql.rowset.RowSetFactory;
 public class RowSetDemo {
@@ -16,7 +16,7 @@ public class RowSetDemo {
 			rowset.execute();
 		while(rowset.next())
 		{
-			System.out.println("Id :"+rowset.getInt()+"Name :"+rowset.getString(2)+"Age :"+rowset.getInt(3));
+			System.out.println("Id :"+rowset.getInt(1)+"Name :"+rowset.getString(2)+"Age :"+rowset.getInt(3));
 		}
 			
 		}
