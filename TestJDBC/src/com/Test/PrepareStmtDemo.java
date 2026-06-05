@@ -19,9 +19,9 @@ public class PrepareStmtDemo {
 
 			// step =3 Creatye Statement
 			PreparedStatement pst = con.prepareStatement("insert into person values(?,?,?)");
-			pst.setInt(1, 102);
-			pst.setString(2, "Mayuri");
-			pst.setInt(3, 70);
+			pst.setInt(1, 103);
+			pst.setString(2, "Shubhangi");
+			pst.setInt(3, 40);
 
 			// Step- 4 Excecute Query
 
@@ -39,3 +39,5 @@ public class PrepareStmtDemo {
 	}
 
 }
+
+
